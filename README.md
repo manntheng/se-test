@@ -1,2 +1,2 @@
-# se-te
-this is a test
+# SE test
+this is a test file for SE class.
