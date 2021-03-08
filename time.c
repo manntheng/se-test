@@ -3,7 +3,11 @@ This file includes some processes for time data.
 Function: 
 1.transform a string to time.
 2.transform time to string.
+********new function************
+3.get current date and time from computer.
 */
+
+// changes made by 2018380115
 
 #include <stdio.h>                                         
 #include <time.h>   
@@ -20,6 +24,12 @@ void time2str(time_t t, char *buf)
   strftime(buf, 30, "%Y-%m-%d %H:%M:%S", localtime(&t));
 }
 
+// function to get current date and time
+void currentTime(time_t curtime)
+{
+   time(&curtime);
+   printf("%s",ctime(&curtime));
+}
 
 int main()
 {
@@ -32,5 +42,10 @@ int main()
   time2str(start_t, szTime2);
   printf("%s\n", szTime2);
 
+  /* update */
+  printf("\nCurrent date and time: ");
+  time_t now;
+  currentTime(now); //call the newly added function
+ 
   return 0;
 }
